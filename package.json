@@ -1,0 +1,30 @@
+{
+  "name": "virtual-html",
+  "version": "0.0.0",
+  "description": "Convert given HTML into Virtual DOM object",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "html",
+    "virtual dom",
+    "domdiff",
+    "dom diffing",
+    "patch",
+    "virtualdom"
+  ],
+  "repository": {
+    "url": "git@github.com:azer/virtual-html.git",
+    "type": "git"
+  },
+  "author": "azer",
+  "license": "BSD",
+  "dependencies": {
+    "htmltree": "0.0.4",
+    "virtual-dom": "0.0.20"
+  },
+  "devDependencies": {
+    "prova": "^1.14.0"
+  }
+}

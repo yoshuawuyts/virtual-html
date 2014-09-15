@@ -1,6 +1,6 @@
 ## virtual-html
 
-Convert given HTML into Virtual DOM object
+Convert given HTML into [Virtual DOM](http://npmjs.org/virtual-dom) object
 
 ## Install
 

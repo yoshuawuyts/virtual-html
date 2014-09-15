@@ -14,7 +14,6 @@ $ npm install virtual-html
 var html = '<div class="foo bar" style="color: red; background: yellow;">yo</div>';
 
 var virtual = require('virtual-html')
-var tree
 
 virtual(html, function (error, dom) {
   if (error) throw error

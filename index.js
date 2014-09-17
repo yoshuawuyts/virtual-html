@@ -46,11 +46,11 @@ function style (raw) {
   var fields = raw.split(/;\s?/);
   var len = fields.length;
   var i = -1;
-  var kv;
+  var s;
 
   while (++i < len) {
-    kv = fields[i].split(/:\s?/);
-    result[kv[0]] = kv[1];
+    s = fields[i].indexOf(':');
+    result[fields[i].slice(0, s)] = fields[i].slice(s + 1).trim();
   }
 
   return result;

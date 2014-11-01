@@ -36,6 +36,8 @@ function vnode (parent) {
   if (parent.attributes.style) parent.attributes.style = style(parent.attributes.style);
   if (parent.attributes['class']) parent.attributes.className = parent.attributes['class'];
 
+  parent.attributes.dataset = createDataSet(parent.attributes);
+
   return createVNode(parent.name, parent.attributes, children);
 }
 
@@ -54,4 +56,18 @@ function style (raw) {
   }
 
   return result;
+}
+
+function createDataSet (props) {
+  var dataset;
+  var key;
+
+  for (key in props) {
+    if (key.slice(0, 5) == 'data-') {
+      dataset || (dataset = {});
+      dataset[key.slice(5)] = props[key];
+    }
+  }
+
+  return dataset;
 }

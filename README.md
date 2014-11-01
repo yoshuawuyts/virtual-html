@@ -11,7 +11,7 @@ $ npm install virtual-html
 ## Usage
 
 ```js
-var html = '<div class="foo bar" style="color: red; background: yellow;">yo</div>';
+var html = '<div class="foo bar" style="color: red; background: yellow;" data-yo="123">yo</div>';
 
 var virtual = require('virtual-html')
 
@@ -24,5 +24,7 @@ virtual(html, function (error, dom) {
   dom.children[0].text
   // => 'yo'
 
+  dom.dataset.yo
+  // => 123
 })
 ```

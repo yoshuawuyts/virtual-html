@@ -22,7 +22,7 @@
   "license": "BSD",
   "dependencies": {
     "htmltree": "0.0.4",
-    "virtual-dom": "0.0.20"
+    "virtual-dom": "^2.0.1"
   },
   "devDependencies": {
     "prova": "^1.14.0"

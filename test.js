@@ -17,3 +17,10 @@ test('creating virtual dom from HTML', function (t) {
     t.equal(dom.properties.dataset.yo, 'hola');
   });
 });
+
+test('returns a virtual dom from HTML', function (t) {
+  t.plan(1);
+
+  var dom = virtual(simple);
+  t.equal(dom.tagName.toLowerCase(), 'div');
+});

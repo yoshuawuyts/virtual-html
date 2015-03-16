@@ -4,12 +4,17 @@ var htmltree = require("htmltree");
 module.exports = virtualHTML;
 
 function virtualHTML (html, callback) {
+  callback = callback || function () {};
   if (typeof html == 'function') html = html();
+  var res = null;
 
   htmltree(html, function (err, dom) {
     if (err) return callback(err);
-    callback(undefined, vnode(dom.root[0]));
+    res = vnode(dom.root[0]);
+    callback(undefined, res);
   });
+
+  return res;
 }
 
 function vnode (parent) {

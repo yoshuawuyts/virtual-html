@@ -1,6 +1,6 @@
 {
   "name": "virtual-html",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Convert given HTML into Virtual DOM object",
   "main": "index.js",
   "scripts": {

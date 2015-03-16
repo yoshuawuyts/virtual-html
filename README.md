@@ -25,7 +25,7 @@ virtual(html, function (error, dom) {
   dom.children[0].text
   // => 'yo'
 
-  dom.dataset.yo
+  dom.properties.dataset.yo
   // => 123
 })
 
@@ -38,6 +38,6 @@ dom.tagName
 dom.children[0].text
 // => 'yo'
 
-dom.dataset.yo
+dom.properties.dataset.yo
 // => 123
 ```

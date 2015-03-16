@@ -38,12 +38,17 @@ function vnode (parent) {
     }
   }
 
-  if (parent.attributes.style) parent.attributes.style = style(parent.attributes.style);
-  if (parent.attributes['class']) parent.attributes.className = parent.attributes['class'];
+  var attributes = parent.attributes;
+  if (attributes.style) attributes.style = style(attributes.style);
+  if (attributes['class']) attributes.className = attributes['class'];
+  if (attributes['for']) {
+    attributes.htmlFor = attributes['for'];
+    delete attributes['for'];
+  }
 
-  parent.attributes.dataset = createDataSet(parent.attributes);
+  attributes.dataset = createDataSet(attributes);
 
-  return createVNode(parent.name, parent.attributes, children);
+  return createVNode(parent.name, attributes, children);
 }
 
 function style (raw) {

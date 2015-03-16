@@ -15,6 +15,7 @@ var html = '<div class="foo bar" style="color: red; background: yellow;" data-yo
 
 var virtual = require('virtual-html')
 
+// asynchronous interface
 virtual(html, function (error, dom) {
   if (error) throw error
 
@@ -27,4 +28,16 @@ virtual(html, function (error, dom) {
   dom.dataset.yo
   // => 123
 })
+
+// synchronous interface
+var dom = virtual(html)
+
+dom.tagName
+// => 'div'
+
+dom.children[0].text
+// => 'yo'
+
+dom.dataset.yo
+// => 123
 ```

@@ -4,7 +4,7 @@ var htmltree = require("htmltree");
 module.exports = virtualHTML;
 
 function virtualHTML (html, callback) {
-  callback = callback || function () {};
+  callback = callback || defaultCb;
   if (typeof html == 'function') html = html();
   var res = null;
 
@@ -15,6 +15,10 @@ function virtualHTML (html, callback) {
   });
 
   return res;
+
+  function defaultCb (err) {
+    if (err) throw new Error(err);
+  }
 }
 
 function vnode (parent) {

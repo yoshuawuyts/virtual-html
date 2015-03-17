@@ -24,3 +24,8 @@ test('returns a virtual dom from HTML', function (t) {
   var dom = virtual(simple);
   t.equal(dom.tagName.toLowerCase(), 'div');
 });
+
+test('should throw if an error is found and no callback is provided', function (t) {
+  t.plan(1);
+  t.throws(virtual.bind(null, null));
+});

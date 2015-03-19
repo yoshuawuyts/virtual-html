@@ -10,12 +10,13 @@ $ npm install virtual-html
 
 ## Usage
 
+Async:
+
 ```js
 var html = '<div class="foo bar" style="color: red; background: yellow;" data-yo="123">yo</div>';
 
 var virtual = require('virtual-html')
 
-// asynchronous interface
 virtual(html, function (error, dom) {
   if (error) throw error
 
@@ -28,6 +29,13 @@ virtual(html, function (error, dom) {
   dom.properties.dataset.yo
   // => 123
 })
+```
+Sync:
+
+```js
+var html = '<div class="foo bar" style="color: red; background: yellow;" data-yo="123">yo</div>';
+
+var virtual = require('virtual-html')
 
 // synchronous interface
 var dom = virtual(html)

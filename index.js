@@ -1,5 +1,6 @@
 var createVNode = require('virtual-dom/h');
 var htmltree = require("htmltree");
+var camel = require('to-camel-case');
 
 module.exports = virtualHTML;
 
@@ -79,15 +80,9 @@ function createDataSet (props) {
   for (key in props) {
     if (key.slice(0, 5) == 'data-') {
       dataset || (dataset = {});
-      dataset[camelCase(key.slice(5))] = props[key];
+      dataset[camel(key.slice(5))] = props[key];
     }
   }
 
   return dataset;
-}
-
-function camelCase (name) {
-  return name.toLowerCase().replace(/-(.)/g, function(match, letter) {
-    return letter.toUpperCase();
-  });
 }

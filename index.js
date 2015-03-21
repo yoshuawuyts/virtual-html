@@ -1,9 +1,16 @@
 var createVNode = require('virtual-dom/h');
 var htmltree = require("htmltree");
+var isDom = require('is-dom');
+var toDom = require('dom-to-string');
 
 module.exports = virtualHTML;
 
 function virtualHTML (html, callback) {
+
+  if (isDom(html)) {
+    html = toDom(html);
+  }
+
   callback = callback || defaultCb;
   if (typeof html == 'function') html = html();
   var res = null;

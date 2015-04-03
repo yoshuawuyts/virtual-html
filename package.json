@@ -22,6 +22,7 @@
   "license": "BSD",
   "dependencies": {
     "htmltree": "0.0.4",
+    "to-camel-case": "^0.2.1",
     "virtual-dom": "^2.0.1"
   },
   "devDependencies": {

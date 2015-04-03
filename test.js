@@ -1,10 +1,10 @@
 var virtual = require('./');
 var test = require("prova");
 
-var simple = '<div class="foo bar" style="color: red; background: yellow; background-image: url(http://f-oo.com/bar.jpg?qux=corge&span=eggs);" data-foo="bar" data-yo="hola" for="woot">yo</div>';
+var simple = '<div class="foo bar" style="color: red; background: yellow; background-image: url(http://f-oo.com/bar.jpg?qux=corge&span=eggs);" data-foo="bar" data-yo="hola" data-two-word="hello" for="woot">yo</div>';
 
 test('creating virtual dom from HTML', function (t) {
-  t.plan(8);
+  t.plan(9);
 
   virtual(simple, function (error, dom) {
     if (error) t.error(error);
@@ -15,6 +15,7 @@ test('creating virtual dom from HTML', function (t) {
     t.equal(dom.properties.style['background-image'], 'url(http://f-oo.com/bar.jpg?qux=corge&span=eggs)');
     t.equal(dom.properties.dataset.foo, 'bar');
     t.equal(dom.properties.dataset.yo, 'hola');
+    t.equal(dom.properties.dataset.twoWord, 'hello');
     t.equal(dom.properties.htmlFor, 'woot');
   });
 });
